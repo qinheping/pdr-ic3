@@ -187,16 +187,16 @@ public class Test {
 	/*
 	 *  SAFE
 	 *  test6:
-	 *  	I = (00000001)
+	 *  	I = (0000000001)
 	 *  	T : T(I) = I + 2
-	 *  	P = -(10000000)
+	 *  	P = -(1000000000)
 	 */
 	@org.junit.Test
 	public void test6() {
         HashMap<String, String> cfg = new HashMap<String, String>();
         cfg.put("model", "true");
         Context ctx = new Context(cfg);
-        int length = 8;
+        int length = 10;
         BoolExpr[] b = new BoolExpr[length];   
         
         BoolExpr I = ctx.mkTrue();
@@ -234,22 +234,22 @@ public class Test {
         P = ctx.mkNot(P);
         
         System.out.println("Test6:");
-        //check(I, T, P, ctx);
+        check(I, T, P, ctx);
 	}
 	
 	/*
 	 *  UNSAFE
 	 *  test7:
-	 *  	I = (00000000)
+	 *  	I = (0000000000)
 	 *  	T : T(I) = I + 2
-	 *  	P = -(10000000)
+	 *  	P = -(1000000000)
 	 */
 	@org.junit.Test
 	public void test7() {
         HashMap<String, String> cfg = new HashMap<String, String>();
         cfg.put("model", "true");
         Context ctx = new Context(cfg);
-        int length = 8;
+        int length = 10;
         BoolExpr[] b = new BoolExpr[length];   
         
         BoolExpr I = ctx.mkTrue();
